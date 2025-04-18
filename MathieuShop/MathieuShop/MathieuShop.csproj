@@ -93,6 +93,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Navigations.cs" />
     <Compile Include="Components\Orders.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -128,10 +129,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ListServicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\AutharizationPage.xaml.cs">
       <DependentUpon>AutharizationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListServicePage.xaml.cs">
+      <DependentUpon>ListServicePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

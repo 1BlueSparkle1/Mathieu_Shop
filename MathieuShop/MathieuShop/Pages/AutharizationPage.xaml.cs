@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MathieuShop.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,27 @@ namespace MathieuShop.Pages
         public AutharizationPage()
         {
             InitializeComponent();
+        }
+
+        private void EntryBtn_Click(object sender, RoutedEventArgs e)
+        {
+            IEnumerable<User> users = App.db.User.ToList();
+            foreach (User user in users)
+            {
+                if (user.Login == LoginTb.Text)
+                {
+                    if (user.Password == PasswordTb.Text)
+                    {
+                        App.thisUser = user;
+                        Navigations.NextPage(new ListServicePage());
+                        break;
+                    }
+                }
+            }
+            if (App.thisUser.Id == 0)
+            {
+                MessageBox.Show("Пользователь не найден!");
+            }
         }
     }
 }

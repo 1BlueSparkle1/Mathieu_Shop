@@ -15,5 +15,6 @@ namespace MathieuShop
     public partial class App : Application
     {
         public static Mathieu_ShopEntities db = new Mathieu_ShopEntities();
+        public static User thisUser = new User();
     }
 }
