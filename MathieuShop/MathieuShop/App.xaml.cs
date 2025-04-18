@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MathieuShop.Components;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,6 @@ namespace MathieuShop
     /// </summary>
     public partial class App : Application
     {
+        public static Mathieu_ShopEntities db = new Mathieu_ShopEntities();
     }
 }
