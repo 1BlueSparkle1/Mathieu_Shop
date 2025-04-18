@@ -9,6 +9,6 @@
       Title="ListServicePage">
 
     <Grid>
-        
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Страница списка услуг</TextBlock>
     </Grid>
 </Page>

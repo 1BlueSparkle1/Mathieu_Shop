@@ -1,4 +1,5 @@
-﻿using MathieuShop.Pages;
+﻿using MathieuShop.Components;
+using MathieuShop.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace MathieuShop
         public MainWindow()
         {
             InitializeComponent();
+            Navigations.mainWindow = this;
             MainFrame.Navigate(new AutharizationPage());
         }
     }

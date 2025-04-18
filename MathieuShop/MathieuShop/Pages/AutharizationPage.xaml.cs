@@ -29,21 +29,28 @@ namespace MathieuShop.Pages
         private void EntryBtn_Click(object sender, RoutedEventArgs e)
         {
             IEnumerable<User> users = App.db.User.ToList();
-            foreach (User user in users)
+            if (!string.IsNullOrEmpty(LoginTb.Text) && !string.IsNullOrEmpty(PasswordTb.Text))
             {
-                if (user.Login == LoginTb.Text)
+                foreach (User user in users)
                 {
-                    if (user.Password == PasswordTb.Text)
+                    if (user.Login == LoginTb.Text)
                     {
-                        App.thisUser = user;
-                        Navigations.NextPage(new ListServicePage());
-                        break;
+                        if (user.Password == PasswordTb.Text)
+                        {
+                            App.thisUser = user;
+                            Navigations.NextPage(new ListServicePage());
+                            break;
+                        }
                     }
                 }
+                if (App.thisUser.Id == 0)
+                {
+                    MessageBox.Show("Пользователь не найден!");
+                }
             }
-            if (App.thisUser.Id == 0)
+            else
             {
-                MessageBox.Show("Пользователь не найден!");
+                MessageBox.Show("Все поля должны быть заполнены!");
             }
         }
     }
